@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<style>
+			.active {
+				background-color: black;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="home.html" {% if active_page == "home" %}class="active"{% endif %}>Home</a></li>
+			<li><a href="cv.html" {% if active_page == "cv" %}class="active"{% endif %}>CV</a></li>
+		</ul>
+		<div>
+			{% block page_content %}{% endblock %}
+		</div>
+	</body>
+</html>
